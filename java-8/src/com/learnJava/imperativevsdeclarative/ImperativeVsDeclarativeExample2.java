@@ -14,8 +14,8 @@ public class ImperativeVsDeclarativeExample2 {
 
         //Remove the duplicates from the list.
 
-        /**
-         * Imperative Style
+        /*
+          Imperative Style
          */
         List<Integer> uniqueList = new ArrayList<>();
         for(Integer i :integerList)
@@ -24,8 +24,8 @@ public class ImperativeVsDeclarativeExample2 {
             }
         System.out.println("unique List : " + uniqueList);
 
-        /**
-         * Declarative Syle
+        /*
+          Declarative Style
          */
 
         List<Integer> uniqueList1 = integerList.stream()

@@ -4,7 +4,7 @@ public class RunnableLambdaExample {
 
     public static void main(String[] args) {
 
-        /**
+        /*
          * Prior Java 8
          */
 
@@ -29,7 +29,7 @@ public class RunnableLambdaExample {
                                         System.out.println("Inside Runnable 3");
         };
 
-        Runnable runnableLambdaSimple = () -> System.out.println("Inside Runnable 3");
+        Runnable runnableLambdaSimple = () -> System.out.println("Inside Runnable 4");
 
 
         new Thread(runnableLambda).start();
@@ -39,12 +39,11 @@ public class RunnableLambdaExample {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("Inside Runnable 3");
+                System.out.println("Inside Runnable 5");
             }
         }).start();
 
-        new Thread(() -> System.out.println("Inside Runnable 4")).start();
-
+        new Thread(() -> System.out.println("Inside Runnable 6")).start();
 
     }
 }
