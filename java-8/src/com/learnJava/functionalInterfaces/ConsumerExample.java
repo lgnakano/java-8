@@ -8,19 +8,23 @@ import java.util.function.Consumer;
 
 public class ConsumerExample {
 
-    static Consumer<Student>  c1= p -> System.out.println(p);
+    static Consumer<Student>  c1 = p -> System.out.println(p);
 
-    static Consumer<Student>  c2= p -> System.out.print(p.getName().toUpperCase());
+    static Consumer<Student>  c2 = p -> System.out.print(p.getName().toUpperCase() + " ");
 
-    static Consumer<Student>  c3= p -> System.out.println(p.getActivities());
+    static Consumer<Student>  c3 = p -> System.out.println(p.getActivities());
 
 
-    public static void printName(){
+    public static void printStudents(){
 
         List<Student> personList = StudentDataBase.getAllStudents();
 
         personList.forEach(c1);
 
+    }
+
+    public static void printNames() {
+        StudentDataBase.getAllStudents().forEach(c2.andThen(System.out::println));
     }
 
     public static void printNameAndActivities(){
@@ -45,13 +49,9 @@ public class ConsumerExample {
 
         c1.accept("java8");
 
-        printName();
+        printStudents();
+        printNames();
         printNameAndActivities();
         printNameAndActivitiesUsingCondition();
-
-
-
-
-
     }
 }
