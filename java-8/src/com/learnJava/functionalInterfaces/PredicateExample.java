@@ -14,16 +14,20 @@ public class PredicateExample {
     public static void predicateAnd(){
 
         System.out.println("Result in predicateAnd : " + p1.and(p2).test(10));
+        System.out.println("Result in predicateAnd : " + p1.and(p2).test(9));
     }
 
     public static void predicateOr(){
 
-        System.out.println("Result in predicateOr : " + p1.and(p2).test(4));
+        System.out.println("Result in predicateOr : " + p1.or(p2).test(15));
+        System.out.println("Result in predicateOr : " + p1.or(p2).test(9));
     }
 
     public static void predicateNegate(){
 
-        System.out.println("Result in predicateNegate : " + p1.and(p2).negate().test(4)); //equivalent to reversing the result
+        System.out.println("Result in predicateNegate : " + p1.and(p2).negate().test(10)); //equivalent to reversing the result
+        System.out.println("Result in predicateNegate : " + p1.and(p2).negate().test(9)); //equivalent to reversing the result
+
     }
 
 

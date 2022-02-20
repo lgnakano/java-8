@@ -24,7 +24,8 @@ public class ConsumerExample {
     }
 
     public static void printNames() {
-        StudentDataBase.getAllStudents().forEach(c2.andThen(System.out::println));
+        StudentDataBase.getAllStudents().forEach(c2);
+        System.out.println();
     }
 
     public static void printNameAndActivities(){
@@ -37,8 +38,8 @@ public class ConsumerExample {
         System.out.println("printNameAndActivitiesUsingCondition : ");
         List<Student> personList = StudentDataBase.getAllStudents();
         personList.forEach((s) -> {
-            if( s.getGradeLevel()>=3 && s.getGpa()>3.9){
-                c2.andThen(c3).accept(s);
+            if( s.getGradeLevel()>=3 && s.getGpa()>=3.9){
+                c2.andThen(c3).andThen(c1).accept(s);
             }
         });
     }

@@ -17,6 +17,15 @@ public class PredicateStudentExample {
     static Function<Integer,Predicate<Integer>> gradePredicate = (toCompare) -> (number) -> number > toCompare;
     static Function<Double,Predicate<Double>>  gpaPredicate = (toCompare) -> (number) -> number > toCompare;
 
+    public static void filterStudentByGradeLevel() {
+        System.out.println("filterStudentByGradeLevel");
+        List<Student> studentList = StudentDataBase.getAllStudents();
+        studentList.forEach((student) -> {
+            if (p1.test(student)) {
+                System.out.println(student);
+            }
+        });
+    }
 
     public static void main(String[] args) {
 
@@ -24,7 +33,10 @@ public class PredicateStudentExample {
 
         studentList.stream()
                 .filter(PredicateStudentExample.p1)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+        System.out.println();
 
         studentList.forEach((student -> {
             if(p1.test(student)){
@@ -32,8 +44,28 @@ public class PredicateStudentExample {
             }
         }));
 
+        System.out.println();
+
+        studentList.forEach((student -> {
+            if(p1.and(p2).test(student)){
+                System.out.println(student);
+            }
+        }));
+
+        System.out.println();
+
         boolean result = gradePredicate.apply(2).test(5) && gpaPredicate.apply(3.6).test(3.9);
         System.out.println("Result from Predicate : " + result);
+
+        studentList.forEach((student -> {
+            if (gradePredicate.apply(student.getGradeLevel()).test(4)) {
+                System.out.println(student);
+            }
+        }));
+
+        System.out.println();
+
+        filterStudentByGradeLevel();
 
     }
 }

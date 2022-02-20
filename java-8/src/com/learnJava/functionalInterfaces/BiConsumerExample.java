@@ -11,13 +11,13 @@ public class BiConsumerExample {
 
     public static void nameAndActivities(){
 
-        BiConsumer<String, List<String>> studentBiConsumer = (name, activities) -> System.out.println(name + " : " + activities);
+        BiConsumer<String, List<String>> studentBiConsumer = (name, activities) -> System.out.println(name + ": " + activities);
 
         Consumer<String> stringConsumer = (name) -> System.out.println("name is  :" + name);
 
         List<Student> students = StudentDataBase.getAllStudents();
 
-        students.forEach((s) -> studentBiConsumer.accept(s.getName(),s.getActivities()));
+        students.forEach((s) -> studentBiConsumer.accept(s.getName().toUpperCase(),s.getActivities()));
     }
 
     public static void main(String[] args) {
