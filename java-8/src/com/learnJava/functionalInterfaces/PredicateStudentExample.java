@@ -17,7 +17,7 @@ public class PredicateStudentExample {
     static Function<Integer,Predicate<Integer>> gradePredicate = (toCompare) -> (number) -> number > toCompare;
     static Function<Double,Predicate<Double>>  gpaPredicate = (toCompare) -> (number) -> number > toCompare;
 
-    public static void filterStudentByGradeLevel() {
+    public static void filterStudentsByGradeLevel() {
         System.out.println("filterStudentByGradeLevel");
         List<Student> studentList = StudentDataBase.getAllStudents();
         studentList.forEach((student) -> {
@@ -27,12 +27,42 @@ public class PredicateStudentExample {
         });
     }
 
+    public static void filterStudentsByGpa() {
+        System.out.println("filterStudentsByGpa");
+        List<Student> studentList = StudentDataBase.getAllStudents();
+        studentList.forEach((student) -> {
+            if (p2.test(student)) {
+                System.out.println(student);
+            }
+        });
+    }
+
+    public static void filterStudents() {
+        System.out.println("filterStudents");
+        List<Student> studentList = StudentDataBase.getAllStudents();
+
+        studentList.forEach( (student -> {
+            if (p1.and(p2).test(student)) {
+                System.out.println(student);
+            }
+        }));
+
+    }
+
     public static void main(String[] args) {
 
         List<Student> studentList = StudentDataBase.getAllStudents();
 
         studentList.stream()
                 .filter(PredicateStudentExample.p1)
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+        System.out.println();
+
+        studentList.stream()
+                .filter(PredicateStudentExample.p1)
+                .filter(PredicateStudentExample.p2)
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
@@ -65,7 +95,11 @@ public class PredicateStudentExample {
 
         System.out.println();
 
-        filterStudentByGradeLevel();
+        filterStudentsByGradeLevel();
+
+        filterStudentsByGpa();
+
+        filterStudents();
 
     }
 }
