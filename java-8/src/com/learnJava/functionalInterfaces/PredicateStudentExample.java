@@ -101,5 +101,36 @@ public class PredicateStudentExample {
 
         filterStudents();
 
+        System.out.println();
+
+        studentList.forEach((student -> {
+            if(p1.or(p2).test(student)){
+                System.out.println(student);
+            }
+        }));
+
+        System.out.println();
+
+        studentList.forEach((student -> {
+            if(p1.or(p2).negate().test(student)){
+                System.out.println(student);
+            }
+        }));
+
+        System.out.println();
+
+        studentList.forEach((student -> {
+            if(p1.and(p2).negate().test(student)){
+                System.out.println(student);
+            }
+        }));
+
+        System.out.println();
+
+        studentList.forEach((student -> {
+            if(!(p1.or(p2).negate().test(student))){
+                System.out.println(student);
+            }
+        }));
     }
 }
