@@ -4,11 +4,11 @@ import java.util.function.Function;
 
 public class FunctionExample {
 
-    static Function<String,String> upperCase =  (name) -> name.toUpperCase();
+    static Function<String,String> upperCase = String::toUpperCase;
 
-    static Function<String,String> addSomeString =  (name) -> name.toUpperCase().concat("default");
+    static Function<String,String> addSomeString =  (name) -> name.toUpperCase().concat(" default");
 
-    static Function<String,Integer> strLength =  (name) -> name.length();
+    static Function<String,Integer> strLength = String::length;
 
 
 
@@ -24,6 +24,8 @@ public class FunctionExample {
         Function<String,String> abc = Function.identity();
 
         System.out.println(abc.apply("ABC"));
+
+        System.out.println(strLength.apply(abc.apply("abc")));
 
 
     }
