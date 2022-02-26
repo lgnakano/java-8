@@ -17,10 +17,19 @@ public class CollectionsvsStreams {
         names.add("Jim");
         names.add("Jenny");
 
+        System.out.println(names);
+
         Stream<String> namesStream = names.stream();
 
         namesStream.forEach(System.out::println);
-        //namesStream.forEach(System.out::println);
+//        namesStream.foreach(System.out::println); // already executed, cannot be used.
+        //But the code below creates new streams at each execution.
+        names.stream().forEach(System.out::println);
 
+        names.stream().forEach(System.out::println);
+
+        names.forEach(System.out::println);
+
+        names.forEach(System.out::println);
     }
 }
