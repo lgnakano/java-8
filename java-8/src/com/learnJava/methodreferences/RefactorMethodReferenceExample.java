@@ -2,7 +2,6 @@ package com.learnJava.methodreferences;
 
 import com.learnJava.data.Student;
 import com.learnJava.data.StudentDataBase;
-import com.learnJava.functionalInterfaces.SupplierExample;
 
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
