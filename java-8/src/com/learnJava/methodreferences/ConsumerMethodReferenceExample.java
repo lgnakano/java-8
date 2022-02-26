@@ -10,7 +10,7 @@ public class ConsumerMethodReferenceExample {
     /**
      * Class::instancemethod
      */
-    static Consumer<Student>  c1= System.out::println;
+    static Consumer<Student>  c1 = System.out::println;
 
 
     /**
