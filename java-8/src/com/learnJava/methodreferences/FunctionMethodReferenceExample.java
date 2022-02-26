@@ -1,7 +1,6 @@
 package com.learnJava.methodreferences;
 
 import java.util.function.Function;
-import java.util.function.UnaryOperator;
 
 public class FunctionMethodReferenceExample {
 
@@ -10,7 +9,7 @@ public class FunctionMethodReferenceExample {
      */
     static Function<String,String> toUpperCaseLambda = (s)->s.toUpperCase();
 
-    static Function<String,String> toUpperCaseMethodRefernce = String::toUpperCase;
+    private static Function<String,String> toUpperCaseMethodRefernce = String::toUpperCase;
 
     public static void main(String[] args) {
 
