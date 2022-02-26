@@ -15,6 +15,18 @@ import static java.util.stream.Collectors.toSet;
 public class StreamsMapExample {
 
 
+    private static List<String> nameList() {
+        return StudentDataBase.getAllStudents().stream()
+                .map(Student::getName)
+                .collect(toList());
+    }
+
+    private static Set<String> nameSet() {
+        return StudentDataBase.getAllStudents().stream()
+                .map(Student::getName)
+                .collect(toSet());
+    }
+
     private static List<String> namesUpperCase(List<Student> names){
         List<String> namesUpperCase = names.stream() //Stream<Student>
                 .map(Student::getName) //Stream<String>
@@ -46,6 +58,9 @@ public class StreamsMapExample {
         names.add("adam");
         names.add("dan");
         names.add("jenny");
+
+        System.out.println("names: " + nameList());
+        System.out.println("names set: " + nameSet());
 
         System.out.println("namesUpperCase List : " + namesUpperCase(StudentDataBase.getAllStudents()));
         System.out.println("namesUpperCase Set : " + namesSetUpperCase(StudentDataBase.getAllStudents()));
