@@ -45,7 +45,8 @@ public class StreamReduceExample {
 
     public static Optional<Student> getHighestGradeStudent(){
 
-        return StudentDataBase.getAllStudents().stream()
+        return StudentDataBase.getAllStudents()
+                .stream()
                 .reduce((s1,s2)->(s1.getGpa()>s2.getGpa()) ? s1 : s2);
     }
 
