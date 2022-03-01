@@ -24,11 +24,11 @@ public class StreamsMaxMinExample {
     public static void main(String[] args) {
         List<Integer> integers = Arrays.asList(6,7,8,9,10);
         Optional<Integer> maxValue =maxValue(integers);
-        int max = maxValue.isPresent() ? maxValue.get():0;
+        int max = maxValue.orElse(0);
         System.out.println("Max Value is : " + max);
 
         Optional<Integer> minValue =minValue(integers);
-        int min = maxValue.isPresent() ? minValue.get():0;
+        int min = minValue.orElse(0);
         System.out.println("Min Value is : " + min);
     }
 }
