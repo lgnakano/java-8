@@ -8,14 +8,18 @@ public class StreamsLimitSkipExample {
 
     public static Optional<Integer> limit(List<Integer> integers){
         return  integers.stream()
+                .peek(System.out::println)
                 .limit(2)
+                .peek(System.out::println)
                 .reduce(Integer::sum);
 
     }
 
     public static Optional<Integer> skip(List<Integer> integers){
         return  integers.stream()
+                .peek(System.out::println)
                 .skip(3)
+                .peek(System.out::println)
                 .reduce(Integer::sum);
     }
     
