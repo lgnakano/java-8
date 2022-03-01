@@ -23,5 +23,6 @@ public class NumericStreamRangesExample {
         System.out.println();
         LongStream.rangeClosed(1,50).asDoubleStream().forEach(value -> System.out.print(value+","));
 
+        IntStream.range(1,50).asDoubleStream().forEach((value) -> System.out.print(value + ", "));
     }
 }
