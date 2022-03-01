@@ -11,13 +11,14 @@ public class StreamsMaxMinExample {
     public static Optional<Integer> maxValue(List<Integer> integerList){
         return integerList.stream()
                 //.reduce(0,(a,b)->(a>b) ? a : b);
-        .reduce(Integer::max);
+                .reduce((a,b) -> (a>b)? a: b);
+//        .reduce(Integer::max);
     }
 
     public static Optional<Integer> minValue(List<Integer> integerList){
         return integerList.stream()
 //                .reduce((a,b)->(a<b) ? a : b);
-                //.reduce(0,Integer::min);
+                //.reduce(0,Integer::min);  This does not work
                  .reduce(Integer::min);
     }
 
