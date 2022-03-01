@@ -16,8 +16,9 @@ public class StreamsMaxMinExample {
 
     public static Optional<Integer> minValue(List<Integer> integerList){
         return integerList.stream()
-                .reduce((a,b)->(a<b) ? a : b);
+//                .reduce((a,b)->(a<b) ? a : b);
                 //.reduce(0,Integer::min);
+                 .reduce(Integer::min);
     }
 
 
