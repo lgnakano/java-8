@@ -18,13 +18,16 @@ public class NumericStreamAggregateExample {
 
         OptionalInt max = IntStream.rangeClosed(1,50).max();
         System.out.println(max.isPresent());
-        System.out.println(max.getAsInt());
+        System.out.println(max.isPresent()?max.getAsInt():"list is empty");
+        System.out.println(max.orElse(0));
 
         OptionalLong min = LongStream.rangeClosed(1,50).min();
-        System.out.println(min.getAsLong());
+        System.out.println(min.isPresent()?min.getAsLong():"list is empty");
+        System.out.println(min.orElse(0));
 
         OptionalDouble avg = IntStream.rangeClosed(1,50).average();
-        System.out.println(avg.getAsDouble());
+        System.out.println(avg.isPresent()?avg.getAsDouble():"list is empty");
+        System.out.println(avg.orElse(0));
 
     }
 }
