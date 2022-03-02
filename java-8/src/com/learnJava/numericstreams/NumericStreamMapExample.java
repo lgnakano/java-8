@@ -1,5 +1,6 @@
 package com.learnJava.numericstreams;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -11,11 +12,10 @@ public class NumericStreamMapExample {
 
     public static List<Integer> mapToObj(){
 
-        List<Integer> integerList = IntStream.rangeClosed(1,5)
-                .mapToObj((i)-> {
-                    return new Integer(i);
-                })
-                .collect(toList());
+        List<Integer> integerList = new ArrayList<>();
+        //            Integer integer = i;
+        for (int i = 1; i <= 5; i++)
+            integerList.add(i);
 
         return integerList;
 
