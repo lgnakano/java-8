@@ -9,20 +9,23 @@ public class StreamsSumAvgExample {
 
     public static int sum(){
 
-        int totalNoOfNotebooks = StudentDataBase.getAllStudents()
+        return StudentDataBase.getAllStudents()
                 .stream()
                 .collect(Collectors.summingInt(Student::getNoteBooks));
-
-        return totalNoOfNotebooks;
     }
 
+    public static int sum2(){
+
+        return StudentDataBase.getAllStudents()
+                .stream()
+                .mapToInt(Student::getNoteBooks)
+                .sum();
+    }
     public static double average(){
 
-        double totalNoOfNotebooks = StudentDataBase.getAllStudents()
+        return StudentDataBase.getAllStudents()
                 .stream()
                 .collect(Collectors.averagingInt(Student::getNoteBooks));
-
-        return totalNoOfNotebooks;
     }
 
 
@@ -30,6 +33,8 @@ public class StreamsSumAvgExample {
 
 
         System.out.println("Total no of Notebooks : " + sum());
+
+        System.out.println("Total no of Notebooks : " + sum2());
 
         System.out.println("Average no of Notebooks : " + average());
     }
