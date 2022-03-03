@@ -13,8 +13,16 @@ public class StreamsCountingExample {
                 .collect(Collectors.counting());
     }
 
+    public static long count2(){
+        return StudentDataBase.getAllStudents()
+                .stream()
+                .filter(student -> student.getGpa() >= 3.9)
+                .count();
+    }
+
     public static void main(String[] args) {
 
         System.out.println(count());
+        System.out.println(count2());
     }
 }
