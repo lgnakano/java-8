@@ -20,8 +20,8 @@ public class OptionalExample {
 
     public static Optional<String> getStudentNameOptional(){
 
-        Optional<Student> student = Optional.ofNullable(StudentDataBase.studentSupplier.get());
-        //Optional<Student> student = Optional.ofNullable(null);
+//        Optional<Student> student = Optional.ofNullable(StudentDataBase.studentSupplier.get());
+        Optional<Student> student = Optional.ofNullable(null);
 
         if(student.isPresent()){
             return  student.map(Student::getName); // don't get confused this with streams map method. Both are different.
@@ -33,7 +33,7 @@ public class OptionalExample {
 
 
         if(getStudentNameOptional().isPresent()){
-            System.out.println(getStudentNameOptional().get());
+            System.out.println(getStudentNameOptional().get().length());
         }else{
             System.out.println("Name is returned as empty.");
         }
