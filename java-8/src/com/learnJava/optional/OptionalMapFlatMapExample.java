@@ -32,7 +32,7 @@ public class OptionalMapFlatMapExample {
         Optional<Student> studentOptional = StudentDataBase.getOptionalStudent()
                 .filter(student -> student.getGpa()>=4.3);
 
-        studentOptional.ifPresent(student -> System.out.println(student));
+        studentOptional.ifPresent(System.out::println);
 
     }
 
