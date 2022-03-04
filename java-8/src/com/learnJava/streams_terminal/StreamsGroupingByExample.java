@@ -54,6 +54,15 @@ public class StreamsGroupingByExample {
         System.out.println(nameNoteBooksMap);
     }
 
+    public  static void twoLevelGroupingByGrade(){
+
+        Map<Integer,Integer> nameNoteBooksMap = StudentDataBase.getAllStudents().stream()
+                .collect(groupingBy(Student::getGradeLevel,
+                        summingInt(Student::getNoteBooks)));// second argument can be of any type of collector
+
+        System.out.println(nameNoteBooksMap);
+    }
+
     /**
      * Grouping by Two parameters
      */
@@ -77,7 +86,7 @@ public class StreamsGroupingByExample {
     }
 
 
-    public  static void calculteTopGpaStudentinEachGrade(){
+    public  static void calculateTopGpaStudentInEachGrade(){
 
         Map<Integer, Optional<Student>> studentMapOptional =  StudentDataBase.getAllStudents().stream()
                 .collect(groupingBy(Student::getGradeLevel,maxBy(Comparator.comparingDouble(Student::getGpa))
@@ -95,7 +104,7 @@ public class StreamsGroupingByExample {
         Stream.of(studentMap).forEach(System.out::println);
     }
 
-    public  static void calculteleastGpaStudentinEachGrade(){
+    public  static void calculateLeastGpaStudentInEachGrade(){
 
         Map<Integer, Optional<Student>> studentMapOptional =  StudentDataBase.getAllStudents().stream()
                 .collect(groupingBy(Student::getGradeLevel,minBy(Comparator.comparingDouble(Student::getGpa))
@@ -115,13 +124,14 @@ public class StreamsGroupingByExample {
 
     public static void main(String[] args) {
 
-        //groupingByGender();
-        //groupByGrade();
+        groupingByGender();
+        customizedGroupingBy();
         twoLevelGrouping();
-        //twoLevelGrouping_2();
-        //twoLevelGrouping_3();
-        //calculteTopGpaStudentinEachGrade();
-        //calculteleastGpaStudentinEachGrade();
-       // threeArgumentGroupingBy();
+        twoLevelGrouping_2();
+        twoLevelGroupingByGrade();
+        twoLevelGrouping_3();
+        calculateTopGpaStudentInEachGrade();
+        calculateLeastGpaStudentInEachGrade();
+        threeArgumentGroupingBy();
     }
 }
