@@ -13,7 +13,7 @@ public class OptionalOfEmptyNullableExample {
     public static Optional<String> of(){
 
         return  Optional.of("Hello");
-       // return  Optional.of(null);
+//        return  Optional.of(null);
 
     }
 
