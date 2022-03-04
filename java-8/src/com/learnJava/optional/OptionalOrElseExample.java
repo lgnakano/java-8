@@ -10,7 +10,7 @@ public class OptionalOrElseExample {
 
     public static String optionalOrElse(){
 
-        //Optional<Student> getOptionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
+//        Optional<Student> optionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
         Optional<Student> optionalStudent = Optional.ofNullable(null);
 
         String name =  optionalStudent.map(Student::getName).orElse("Default");
@@ -21,7 +21,7 @@ public class OptionalOrElseExample {
 
     public static String optionalOrElseGet(){
 
-        //Optional<Student> getOptionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
+//        Optional<Student> optionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
         Optional<Student> optionalStudent = Optional.ofNullable(null);
 
         String name =  optionalStudent.map(Student::getName).orElseGet(()->"Default");
@@ -32,7 +32,7 @@ public class OptionalOrElseExample {
 
     public static String optionalOrElseThrow(){
 
-        //Optional<Student> getOptionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
+//        Optional<Student> optionalStudent = Optional.ofNullable(StudentDataBase.studentSupplier.get());
         Optional<Student> optionalStudent = Optional.ofNullable(null);
 
         String name =  optionalStudent.map(Student::getName).orElseThrow(()->new RuntimeException("No Data available"));
