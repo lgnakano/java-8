@@ -78,8 +78,11 @@ public class StreamsGroupingByExample {
 
     public static void threeArgumentGroupingBy(){
 
-        LinkedHashMap<String,Set<Student>> studentMap = StudentDataBase.getAllStudents().stream()
-                .collect(groupingBy(Student::getName,LinkedHashMap::new,
+        LinkedHashMap<Integer,Set<Student>> studentMap =
+                StudentDataBase.getAllStudents().stream()
+                .collect(
+                        groupingBy(Student::getGradeLevel,
+                                LinkedHashMap::new,
                         toSet()));
 
         System.out.println(" studentMap : " + studentMap);
@@ -88,8 +91,10 @@ public class StreamsGroupingByExample {
 
     public  static void calculateTopGpaStudentInEachGrade(){
 
-        Map<Integer, Optional<Student>> studentMapOptional =  StudentDataBase.getAllStudents().stream()
-                .collect(groupingBy(Student::getGradeLevel,maxBy(Comparator.comparingDouble(Student::getGpa))
+        Map<Integer, Optional<Student>> studentMapOptional =
+                StudentDataBase.getAllStudents().stream()
+                .collect(groupingBy(Student::getGradeLevel,
+                        maxBy(Comparator.comparingDouble(Student::getGpa))
                 ));
 
         Stream.of(studentMapOptional).forEach(System.out::println);
@@ -97,8 +102,8 @@ public class StreamsGroupingByExample {
 
         Map<Integer, Student> studentMap =  StudentDataBase.getAllStudents().stream()
                 .collect(groupingBy(Student::getGradeLevel,
-                        collectingAndThen(maxBy(Comparator.comparingDouble(Student::getGpa))
-                        ,Optional::get
+                            collectingAndThen(maxBy(Comparator.comparingDouble(Student::getGpa)),
+                            Optional::get
                 )));
 
         Stream.of(studentMap).forEach(System.out::println);
@@ -106,8 +111,10 @@ public class StreamsGroupingByExample {
 
     public  static void calculateLeastGpaStudentInEachGrade(){
 
-        Map<Integer, Optional<Student>> studentMapOptional =  StudentDataBase.getAllStudents().stream()
-                .collect(groupingBy(Student::getGradeLevel,minBy(Comparator.comparingDouble(Student::getGpa))
+        Map<Integer, Optional<Student>> studentMapOptional =
+                StudentDataBase.getAllStudents().stream()
+                .collect(groupingBy(Student::getGradeLevel,
+                        minBy(Comparator.comparingDouble(Student::getGpa))
                 ));
 
         Stream.of(studentMapOptional).forEach(System.out::println);
