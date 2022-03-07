@@ -61,10 +61,10 @@ public class DefaultMethodExample2 {
         List<Student> studentList = StudentDataBase.getAllStudents();
         System.out.println("Original List");
         studentList.forEach(student -> System.out.println("student : " + student));
-//        sortByGender();
-//        sortByName(studentList);
-//        sortByGPA(studentList);
-//        comparatorChaining();
+        sortByGender();
+        sortByName(studentList);
+        sortByGPA(studentList);
+        comparatorChaining();
         sortWithNullValues(studentList);
 
     }
