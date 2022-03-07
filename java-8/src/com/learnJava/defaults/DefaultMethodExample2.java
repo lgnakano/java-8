@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 public class DefaultMethodExample2 {
 
     static Comparator<Student> nameComparator = Comparator.comparing(Student::getName);
-    static Comparator<Student> gpaComparator = Comparator.comparing(Student::getGpa);
+    static Comparator<Student> gpaComparator = Comparator.comparing(Student::getGpa).reversed();
     static Comparator<Student> genderComparator = Comparator.comparing(Student::getGender);
     static Comparator<Student> gradeComparator = Comparator.comparing(Student::getGradeLevel);
     static Consumer<Student> studentConsumer = student -> System.out.println("student : " + student);
@@ -53,9 +53,9 @@ public class DefaultMethodExample2 {
         List<Student> studentList = StudentDataBase.getAllStudents();
         System.out.println("Original List");
         studentList.forEach(student -> System.out.println("student : " + student));
-        /*sortByGender();
+        sortByGender();
         sortByName(studentList);
-        sortByGPA(studentList);*/
+        sortByGPA(studentList);
         comparatorChaining();
 
     }
