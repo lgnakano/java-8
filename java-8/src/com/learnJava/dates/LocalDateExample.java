@@ -1,6 +1,5 @@
 package com.learnJava.dates;
 
-import java.lang.reflect.Method;
 import java.time.*;
 import java.time.temporal.*;
 
@@ -13,7 +12,7 @@ public class LocalDateExample {
         LocalDate localDate = LocalDate.now();
         System.out.println("Current Date is " + localDate);
 
-        LocalDate localDate1 = LocalDate.of(2018, 03,03);
+        LocalDate localDate1 = LocalDate.of(2018, 3,03);
         System.out.println(localDate1);
 
         System.out.println("Year Day Date " + LocalDate.ofYearDay(2018,365));
@@ -21,7 +20,7 @@ public class LocalDateExample {
         //System.out.println("Epoch Day " + LocalDate.ofEpochDay(1));
 
 
-        /**
+        /*
          * Getting Values from Local Date
          */
         System.out.println(localDate.getMonth());
@@ -31,7 +30,7 @@ public class LocalDateExample {
         System.out.println(localDate.getYear());
         System.out.println("Day of Month using get : " + localDate.get(ChronoField.DAY_OF_MONTH));
 
-        /**
+        /*
          * Modifying Values in Local Date
          */
         System.out.println("Plus Weeks  : " + localDate.plusWeeks(1));
@@ -39,19 +38,20 @@ public class LocalDateExample {
         System.out.println("Plus Days " + localDate.plusDays(1));
         System.out.println("Plus Months : " + localDate.plusMonths(1));
         System.out.println("Minus Months : "+localDate.minusMonths(1));
+        System.out.println("Minus Days : "+localDate.minusDays(1));
         System.out.println("Chrono Unit : " + localDate.minus(2, ChronoUnit.YEARS));
         System.out.println("With Year : " + localDate.withYear(2019));
         System.out.println("With Year Chrono Field : " + localDate.with(ChronoField.YEAR , 2019));
         System.out.println("With Temporal Adjusters : " + localDate.with(TemporalAdjusters.lastDayOfMonth()));
         System.out.println("With Temporal Adjusters : " + localDate.with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.FRIDAY))); // maps to the first friday of the week
 
-        /**
+        /*
          * Unsupported Scenarios
          */
         //  System.out.println("Chrono Unit : " + localDate.minus(2, ChronoUnit.SECONDS));
         System.out.println("is Supported : " + localDate.isSupported(ChronoUnit.DAYS));
 
-        /**
+        /*
          * Additional Support Methods
          */
         System.out.println("Not a Leap Year : " + localDate.isLeapYear());
