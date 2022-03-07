@@ -12,9 +12,11 @@ public class DefaultMethodsExample1 {
 
         List<String> stringList  = Arrays.asList("Adam", "Jenny", "Alex","Eric","Mike");
 
-       /* Collections.sort(stringList);
+       /* Prior to Java 8
 
-        System.out.println("Sorted list : " +  stringList);
+       Collections.sort(stringList);
+
+        System.out.println("Sorted list Collections.Sort(): " +  stringList);
        */
 
         stringList.sort(Comparator.naturalOrder());
