@@ -9,13 +9,18 @@ public class MultiplierImpl implements  Multiplier {
 
         return integerList
                 .stream()
-                .reduce(1, (x,y) -> x*y);
+                .reduce(1, (x, y) -> x * y);
     }
 
     @Override
-     public int size(List<Integer> integerList){
-         System.out.println("Inside Implementation class");
+    public int size(List<Integer> integerList) {
+        System.out.println("Inside Implementation class");
         return integerList.size();
     }
 
+    /* cannot override static method */
+//    @Override
+//    public boolean isEmpty(List<Integer> integerList) {
+//        return integerList != null && integerList.size() == 0;
+//    }
 }
