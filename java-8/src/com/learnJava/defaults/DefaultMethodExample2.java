@@ -49,14 +49,21 @@ public class DefaultMethodExample2 {
         studentList.forEach(studentConsumer);
     }
 
+    public static void sortWithNullValues(List<Student> studentList) {
+//        studentList.add(null);
+        Comparator<Student> studentComparator = Comparator.nullsFirst(nameComparator);
+        studentList.sort(studentComparator);
+    }
+
     public static void main(String[] args) {
         List<Student> studentList = StudentDataBase.getAllStudents();
         System.out.println("Original List");
         studentList.forEach(student -> System.out.println("student : " + student));
-        sortByGender();
-        sortByName(studentList);
-        sortByGPA(studentList);
-        comparatorChaining();
+//        sortByGender();
+//        sortByName(studentList);
+//        sortByGPA(studentList);
+//        comparatorChaining();
+        sortWithNullValues(studentList);
 
     }
 }
