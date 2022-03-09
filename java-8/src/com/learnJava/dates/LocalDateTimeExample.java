@@ -12,17 +12,17 @@ public class LocalDateTimeExample {
 
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println("localDateTime :" + localDateTime);
-        LocalDateTime localDateTime1  = LocalDateTime.of(2018, 01,01,12,10,00);
+        LocalDateTime localDateTime1  = LocalDateTime.of(2018, 1,1,12,10,0);
         System.out.println("localDateTime1 : " + localDateTime1);
 
-        /**
+        /*
          * Getting the Values
          */
         System.out.println("getMinute : " + localDateTime.getMinute());
         System.out.println("getHour : " + localDateTime.getHour());
         System.out.println("DAY_OF_MONTH : " + localDateTime.get(ChronoField.DAY_OF_MONTH));
 
-        /**
+        /*
          *  Modifying the values in Local Time
          */
         System.out.println("plusDays : " + localDateTime.plusDays(2));
@@ -33,7 +33,7 @@ public class LocalDateTimeExample {
 
 
 
-        /**
+        /*
          * Converting LocalDate,LocalTime to LocalDateTime and vice versa
          */
 
@@ -44,8 +44,8 @@ public class LocalDateTimeExample {
         System.out.println("atTime : "+ localTime.atDate(localDate));
         System.out.println("atStartOfDay : " + localDate.atStartOfDay());
 
-        System.out.println("toLocalDate : " + localDateTime.toLocalDate());;
-        System.out.println("toLocalTime : " + localDateTime.toLocalTime());;
+        System.out.println("toLocalDate : " + localDateTime.toLocalDate());
+        System.out.println("toLocalTime : " + localDateTime.toLocalTime());
 
 
     }
