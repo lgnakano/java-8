@@ -20,12 +20,14 @@ public class LocalDateTimeExample {
          */
         System.out.println("getMinute : " + localDateTime.getMinute());
         System.out.println("getHour : " + localDateTime.getHour());
+        System.out.println("getDayOfMonth = " + localDateTime.getDayOfMonth());
         System.out.println("DAY_OF_MONTH : " + localDateTime.get(ChronoField.DAY_OF_MONTH));
 
         /*
          *  Modifying the values in Local Time
          */
         System.out.println("plusDays : " + localDateTime.plusDays(2));
+        System.out.println("plusHours : " + localDateTime.plusHours(2));
         System.out.println("minusDays : " + localDateTime.minusDays(2));
         System.out.println("withMonth : " + localDateTime.withMonth(2));
         System.out.println("with : " + localDateTime.with(ChronoField.MONTH_OF_YEAR,3));
