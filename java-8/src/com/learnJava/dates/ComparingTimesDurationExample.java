@@ -18,13 +18,13 @@ public class ComparingTimesDurationExample {
         System.out.println("duration  : " +  duration.toMinutes());
 
         Duration duration1 = Duration.ofHours(3);
-        System.out.println(duration1.toMinutes());
+        System.out.println("duration to minutes: " + duration1.toMinutes());
 
         Duration duration2 = Duration.ofMinutes(3);
-        System.out.println(duration2.toMinutes());
+        System.out.println("duration to minutes: " + duration2.toMinutes());
 
 
-        /**
+        /*
          * LocalDateTime
          */
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -34,7 +34,8 @@ public class ComparingTimesDurationExample {
 
         System.out.println(duration3.toDays());
 
-        /**
+
+        /*
          * LocalDate - not supported
          */
 
