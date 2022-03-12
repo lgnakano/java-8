@@ -15,6 +15,9 @@ public class FormattingLocalDateTimeExample {
         LocalDateTime localDateTime1 = LocalDateTime.parse(dateTime, DateTimeFormatter.ISO_DATE_TIME);
         System.out.println("localDateTime1 : " + localDateTime1);
 
+        /*
+        Custom format
+         */
         String dateTime1 = "2018-04-1814|33|33";
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-ddHH|mm|ss");
         System.out.println("custom date time format: " + LocalDateTime.parse(dateTime1,dateTimeFormatter));
