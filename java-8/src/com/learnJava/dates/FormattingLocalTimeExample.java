@@ -2,13 +2,12 @@ package com.learnJava.dates;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class FormattingLocalTimeExample {
 
     public static void parseTime(){
 
-        /**
+        /*
          * System defined format
          */
         String time = "13:00";
@@ -18,8 +17,8 @@ public class FormattingLocalTimeExample {
         LocalTime localTime1 = LocalTime.parse(time, DateTimeFormatter.ISO_TIME);
         System.out.println("localTime1 : " + localTime1);
 
-        //H -> 24 hour time format
-        //h-> 12 hour time format
+        //H -> 24-hour time format
+        //h-> 12-hour time format
         String time1 = "13*00";
         DateTimeFormatter dateTimeFormatter =DateTimeFormatter.ofPattern("HH*mm");
         LocalTime localTime2 = LocalTime.parse(time1,dateTimeFormatter);
